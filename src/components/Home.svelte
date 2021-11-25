@@ -3,7 +3,8 @@
 
   const cid = "90aaedd7-7329-4ac5-bfa9-6dd586300c2f";
 
-  const url = "https://api.fsstaging.com.au/api/auth-user";
+  // const url = "https://api.fsstaging.com.au/api/auth-user";
+  const url = "https://api.fsstaging.com.au/api/members/045972";
 
   if (clientSide) {
     getData(url);
