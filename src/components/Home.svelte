@@ -13,6 +13,7 @@
     const response = await fetch(url, {
       method: "GET",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "http://api.futuresuper.local",
         cid: cid,
