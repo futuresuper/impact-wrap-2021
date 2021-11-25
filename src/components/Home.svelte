@@ -3,7 +3,7 @@
 
   const cid = "90aaedd7-7329-4ac5-bfa9-6dd586300c2f";
 
-  const url = "https://api.fsstaging.com.au/api/gender-types";
+  const url = "https://api.fsstaging.com.au/api/auth-user";
 
   if (clientSide) {
     getData(url);
