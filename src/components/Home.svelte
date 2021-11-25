@@ -1,19 +1,23 @@
 <script>
   const clientSide = !import.meta.env.SSR;
 
+  const cid = "90aaedd7-7329-4ac5-bfa9-6dd586300c2f";
+
+  const url = "https://api.fsstaging.com.au/api/gender-types";
+
   if (clientSide) {
-    postData(
-      "https://67l8qspd50.execute-api.ap-southeast-2.amazonaws.com/prod/letter?rcode="
-    );
+    getData(url);
   }
 
-  async function postData(url = "", data = {}) {
+  async function getData(url = "") {
     const response = await fetch(url, {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "http://api.futuresuper.local",
+        cid: cid,
       },
-      body: JSON.stringify(data),
+      credentials: "include",
     });
     console.log(response);
   }
