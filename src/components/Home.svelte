@@ -17,7 +17,7 @@
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://api.futuresuper.local",
+        "Access-Control-Allow-Origin": "https://api.fsstaging.com.au",
         cid: cid,
       },
       credentials: "include",
