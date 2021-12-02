@@ -1,0 +1,50 @@
+---
+const pageTitle = 'Impact Wrap | Future Super';
+const pageImage = "https://www.futuresuper.com.au/images/future-super-og.png";
+const seoDescription = "Your 2021 Impact Wrap";
+---
+
+<html lang="en">
+  <head>
+    <title>{pageTitle}</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover" shrink-to-fit="no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content={seoDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:image" content={pageImage} />
+    <meta property="og:type" content="website" />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={seoDescription} />
+    <meta property="twitter:image" content={pageImage} />
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <link rel="icon" href="/images/FS_Favicon_32.png" sizes="32x32">
+    <link rel="icon" href="/images/FS_Favicon_128.png" sizes="128x128">
+    <link rel="icon" href="/images/FS_Favicon_192.png" sizes="192x192">
+
+    <!-- Favicon: Android -->
+    <link rel="shortcut icon" sizes="196x196" href="/images/FS_Favicon_196.png">
+
+    <!-- Favicon: iOS -->
+    <link rel="apple-touch-icon" href="/images/FS_Favicon_152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/images/FS_Favicon_120.png" sizes="167x167">
+    <link rel="apple-touch-icon" href="/images/FS_Favicon_180.png" sizes="180x180">
+
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.scss')}>
+
+
+    <script>
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="eQR3natt50TEUlf2gEcCSbBn4fhmXjZQ";;analytics.SNIPPET_VERSION="4.15.3";
+      analytics.load("eQR3natt50TEUlf2gEcCSbBn4fhmXjZQ");
+      analytics.page();
+      }}();
+    </script>
+  </head>
+  <body>
+    <main >
+      <slot />
+    </main>
+  </body>
+</html>

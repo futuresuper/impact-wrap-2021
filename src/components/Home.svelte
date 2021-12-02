@@ -1,4 +1,7 @@
 <script>
+  import Sections from "./Sections.svelte";
+
+  /*
   const clientSide = !import.meta.env.SSR;
 
   const cid = "94f7111e-264d-4089-9db2-2c49b7f89eea";
@@ -24,6 +27,7 @@
     });
     console.log(response);
   }
+  */
 </script>
 
-<div>Hello world</div>
+<Sections />
