@@ -9,14 +9,36 @@
     <div class="number">552</div>
   </div>
 
-  <p>different investments.</p>
+  <div>
+    <p>different investments.</p>
 
-  <p class="disclaimer">
-    As at 30 June 2021. Counts investments by same issuer in same asset class as
-    one. For ETFs, counts individual stocks within each ETF.
-  </p>
+    <p class="disclaimer">
+      As at 30 June 2021. Counts investments by same issuer in same asset class
+      as one. For ETFs, counts individual stocks within each ETF.
+    </p>
+  </div>
 </SectionLayout>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  .circle {
+    --size: 280px;
+    --max: 70vw;
+    border: 1px solid $green;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    max-width: var(--max);
+    max-height: var(--max);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .number {
+    font-family: $bold;
+    font-size: $font-size-xl;
+    color: $green;
+  }
 </style>

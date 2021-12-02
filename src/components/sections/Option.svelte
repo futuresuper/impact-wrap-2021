@@ -8,13 +8,18 @@
     financial growth and positive environmental impact.
   </p>
 
-  <img src="/images/Earth_Small.gif" alt="3D rotating earth" />
+  <img src="/images/Earth.gif" alt="3D rotating earth" />
 
-  <p class="s">54% of members also chose this option</p>
-
-  <p class="disclaimer">AS AT 30 JUNE 2021</p>
+  <div>
+    <p class="s">54% of members also chose this option</p>
+    <p class="disclaimer">AS AT 30 JUNE 2021</p>
+  </div>
 </SectionLayout>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  img {
+    max-width: 50vw;
+  }
 </style>

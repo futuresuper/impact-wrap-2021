@@ -1,22 +1,33 @@
 <script>
-  import SectionLayout from "../../layouts/SectionLayout.svelte";
+  import WhiteBox from "../../components/ui/WhiteBox.svelte";
 </script>
 
-<SectionLayout>
+<WhiteBox>
   <p class="xs">QUESTION</p>
 
   <p>Guess your biggest investment?</p>
 
-  <button>RESMED</button>
-  <p class="xs">A Healthcare Company</p>
+  <div>
+    <button>RESMED</button>
+    <p class="s">A Healthcare Company</p>
+  </div>
 
-  <button>INFRADEBT ETHICAL FUND</button>
-  <p class="xs">Lends To Renewables Projects</p>
+  <div>
+    <button>INFRADEBT ETHICAL FUND</button>
+    <p class="s">Lends To Renewables Projects</p>
+  </div>
 
-  <button>APPLE</button>
-  <p class="xs">A Big Tech Company</p>
-</SectionLayout>
+  <div>
+    <button>APPLE</button>
+    <p class="s">A Big Tech Company</p>
+  </div>
+</WhiteBox>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  button {
+    width: 100%;
+    margin-bottom: 1.5vh;
+  }
 </style>

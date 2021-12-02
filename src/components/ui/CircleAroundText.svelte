@@ -11,7 +11,7 @@
   <div class="text-in-middle">
     {#if heading}
       <h2
-        class={heading.length > 20 ? "smaller" : ""}
+        class={heading.length > 12 ? "smaller" : ""}
         style="color: {textColour}"
       >
         {@html heading}
@@ -30,7 +30,8 @@
   @use "../../styles/" as *;
 
   .circle-container {
-    max-width: 600px;
+    width: 54vh;
+    max-width: 100%;
     margin-top: 0px;
     display: flex;
     align-items: center;
@@ -43,14 +44,16 @@
     }
   }
 
+  h2 {
+    font-size: $font-size-l;
+  }
+
   h2.smaller {
-    font-size: 34px;
+    font-size: $font-size-m;
   }
 
   @media (max-width: 600px) {
     .circle-container {
-      width: 400px;
-
       .text-in-middle {
         max-width: 220px;
         h2 {
@@ -69,8 +72,6 @@
 
   @media (max-width: 440px) {
     .circle-container {
-      width: 100%;
-
       .text-in-middle {
         max-width: 140px;
         h2 {

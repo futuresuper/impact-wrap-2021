@@ -2,6 +2,10 @@
 @use "colours" as *;
 @use "type" as *;
 
+body {
+  background-color: $black;
+}
+
 button,
 .button {
   font-family: $bold;
