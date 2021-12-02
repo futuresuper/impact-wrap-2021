@@ -1,5 +1,5 @@
 <script>
-  import WhiteBox from "../../layouts/WhiteBox.svelte";
+  import WhiteBox from "../ui/WhiteBox.svelte";
 </script>
 
 <WhiteBox>
