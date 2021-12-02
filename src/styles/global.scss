@@ -2,17 +2,9 @@
 @use "colours" as *;
 @use "type" as *;
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1440px;
-  padding: 40px;
-}
-
 button,
 .button {
-  font-family: $heading;
-  line-height: $line-height-sm;
+  font-family: $bold;
   text-align: center;
   display: inline-flex;
   flex-direction: row;

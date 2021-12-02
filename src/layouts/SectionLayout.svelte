@@ -2,13 +2,11 @@
 </script>
 
 <section>
-  <p>Every dollar in your account is helping to grow your impact</p>
-
-  <img src="/images/Coins.gif" alt="3D spinning coin" />
+  <slot />
 </section>
 
 <style lang="scss">
-  @use "../../styles/" as *;
+  @use "../styles/" as *;
 
   section {
     margin: 0;
@@ -17,12 +15,7 @@
     color: $white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-  }
-
-  p {
-    text-align: center;
-    font-size: 3vw;
   }
 </style>
