@@ -1,10 +1,9 @@
 <script>
   import Sections from "./Sections.svelte";
 
-  /*
   const clientSide = !import.meta.env.SSR;
 
-  const cid = "94f7111e-264d-4089-9db2-2c49b7f89eea";
+  const cid = "90aaedd7-7329-4ac5-bfa9-6dd586300c2f";
 
   const url1 = "https://api.fsstaging.com.au/api/auth-user";
   const url2 = "https://api.fsstaging.com.au/api/members/045972";
@@ -27,7 +26,6 @@
     });
     console.log(response);
   }
-  */
 </script>
 
 <Sections />
