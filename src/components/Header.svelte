@@ -1,7 +1,9 @@
 <script>
+  import Bar from "./ui/Bar.svelte";
+
   export let screens = [];
   export let setScreen;
-  export let showing = 1;
+  export let showing;
 </script>
 
 <div class="container">
@@ -13,8 +15,8 @@
     class="bars"
     style="grid-template-columns: repeat({screens.length}, 1fr)"
   >
-    {#each screens as screen, i}
-      <div class="bar" on:click={setScreen(i)} />
+    {#each screens as screen, index}
+      <Bar {setScreen} {index} {showing} duration={screen[1]} />
     {/each}
   </div>
 </div>
@@ -42,12 +44,5 @@
   .bars {
     display: grid;
     grid-gap: 1vw;
-  }
-
-  .bar {
-    width: 100%;
-    height: 6px;
-    border: 1px solid $green;
-    border-radius: 10px;
   }
 </style>

@@ -3,7 +3,7 @@
   import CircleAroundText from "../ui/CircleAroundText.svelte";
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
-  export let name = "namereallyl";
+  export let name = "Name";
 </script>
 
 <SectionLayout>

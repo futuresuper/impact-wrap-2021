@@ -18,38 +18,38 @@
 
   const clientSide = !import.meta.env.SSR;
 
+  const standardTime = 3000;
   const screens = [
-    "Title",
-    "Option",
-    "Save",
-    "Included",
-    "Question",
-    "Answer",
-    "Shake",
-    "Nightingale",
-    "FiveB",
-    "Joined",
-    "Members",
-    "FUM",
-    "Rating",
-    "More",
+    ["Title", standardTime], // Name, Time
+    ["Option", 6000],
+    ["Save", standardTime],
+    ["Included", standardTime],
+    ["Question", standardTime],
+    ["Answer", standardTime],
+    ["Shake", standardTime],
+    ["Nightingale", standardTime],
+    ["FiveB", standardTime],
+    ["Joined", standardTime],
+    ["Members", standardTime],
+    ["FUM", standardTime],
+    ["Rating", standardTime],
+    ["More", standardTime],
   ];
 
   let showing = 0;
 
   function setScreen(i) {
     showing = i;
+    // console.log(screens[showing][0]);
   }
 
-  // $: console.log(showing);
-
-  function nextScreen() {
-    showing = showing + 1;
-  }
+  // function nextScreen() {
+  //   showing = showing + 1;
+  // }
 
   // if (clientSide) {
   //   setInterval(() => {
-  //     // nextScreen();
+  //     nextScreen();
   //   }, 3000);
   // }
 </script>
@@ -59,35 +59,35 @@
     <Header {screens} {setScreen} {showing} />
   </header>
   <section>
-    {#if "Title" === screens[showing]}
+    {#if "Title" === screens[showing][0]}
       <Title />
-    {:else if "Option" === screens[showing]}
+    {:else if "Option" === screens[showing][0]}
       <Option />
-    {:else if "Option" === screens[showing]}
+    {:else if "Option" === screens[showing][0]}
       <Option />
-    {:else if "Save" === screens[showing]}
+    {:else if "Save" === screens[showing][0]}
       <Save />
-    {:else if "Included" === screens[showing]}
+    {:else if "Included" === screens[showing][0]}
       <Included />
-    {:else if "Question" === screens[showing]}
+    {:else if "Question" === screens[showing][0]}
       <Question />
-    {:else if "Answer" === screens[showing]}
+    {:else if "Answer" === screens[showing][0]}
       <Answer />
-    {:else if "Shake" === screens[showing]}
+    {:else if "Shake" === screens[showing][0]}
       <Shake />
-    {:else if "Nightingale" === screens[showing]}
+    {:else if "Nightingale" === screens[showing][0]}
       <Nightingale />
-    {:else if "FiveB" === screens[showing]}
+    {:else if "FiveB" === screens[showing][0]}
       <FiveB />
-    {:else if "Joined" === screens[showing]}
+    {:else if "Joined" === screens[showing][0]}
       <Joined />
-    {:else if "Members" === screens[showing]}
+    {:else if "Members" === screens[showing][0]}
       <Members />
-    {:else if "FUM" === screens[showing]}
+    {:else if "FUM" === screens[showing][0]}
       <FUM />
-    {:else if "Rating" === screens[showing]}
+    {:else if "Rating" === screens[showing][0]}
       <Rating />
-    {:else if "More" === screens[showing]}
+    {:else if "More" === screens[showing][0]}
       <More />
     {/if}
   </section>
