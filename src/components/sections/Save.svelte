@@ -1,14 +1,11 @@
 <script>
-  import SectionLayout from "../../layouts/SectionLayout.svelte";
 </script>
 
-<SectionLayout>
-  <p>The money you save for retirement</p>
+<p>The money you save for retirement</p>
 
-  <img src="/images/Coins.gif" alt="3D spinning coin" />
+<img src="/images/Coins.gif" alt="3D spinning coin" />
 
-  <p>is having an impact every day</p>
-</SectionLayout>
+<p>is having an impact every day</p>
 
 <style lang="scss">
   @use "../../styles/" as *;

@@ -1,20 +1,17 @@
 <script>
-  import SectionLayout from "../../layouts/SectionLayout.svelte";
 </script>
 
-<SectionLayout>
-  <p>Together, you and other Future Super members have</p>
+<p>Together, you and other Future Super members have</p>
 
-  <div>$1.18 Billion</div>
+<div>$1.18 Billion</div>
 
-  <p>
-    invested with Future Super, and <span class="bold">
-      not in fossil fuels
-    </span>
-  </p>
+<p>
+  invested with Future Super, and <span class="bold">
+    not in fossil fuels
+  </span>
+</p>
 
-  <p class="disclaimer">As at October 2021</p>
-</SectionLayout>
+<p class="disclaimer">As at October 2021</p>
 
 <style lang="scss">
   @use "../../styles/" as *;

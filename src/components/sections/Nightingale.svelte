@@ -1,23 +1,19 @@
 <script>
-  import SectionLayout from "../../layouts/SectionLayout.svelte";
   import Note from "../ui/Note.svelte";
 </script>
 
-<SectionLayout>
-  <p class="l">Nightingale</p>
+<p class="l">Nightingale</p>
 
-  <img
-    src="https://res.cloudinary.com/future-super/image/upload/c_scale,w_1200,f_auto,q_auto/v1623370119/nightingale.png"
-    alt="People tending to vegetable garden"
-  />
+<img
+  src="https://res.cloudinary.com/future-super/image/upload/c_scale,w_1200,f_auto,q_auto/v1623370119/nightingale.png"
+  alt="People tending to vegetable garden"
+/>
 
-  <p>
-    Disrupting the housing market with affordable, fossil fuel free
-    developments.
-  </p>
+<p>
+  Disrupting the housing market with affordable, fossil fuel free developments.
+</p>
 
-  <Note />
-</SectionLayout>
+<Note />
 
 <style lang="scss">
   @use "../../styles/" as *;
