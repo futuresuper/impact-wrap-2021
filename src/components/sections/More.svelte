@@ -13,4 +13,9 @@
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  button {
+    min-width: 40vw;
+    font-size: 3vh;
+  }
 </style>

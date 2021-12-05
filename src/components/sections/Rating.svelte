@@ -9,9 +9,14 @@
 
   <button>😍</button>
   <button>😐</button>
-  <button>☹</button>
+  <button>🙁</button>
 </SectionLayout>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  button {
+    min-width: 40vw;
+    font-size: 4vh;
+  }
 </style>

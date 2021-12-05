@@ -13,4 +13,9 @@
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  img {
+    border-radius: 40px;
+    max-height: 60vh;
+  }
 </style>

@@ -29,5 +29,9 @@
   button {
     width: 100%;
     margin-bottom: 1.5vh;
+    border-color: $green;
+    &:hover {
+      background-color: $green;
+    }
   }
 </style>

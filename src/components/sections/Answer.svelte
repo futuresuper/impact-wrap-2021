@@ -6,7 +6,7 @@
   <p class="xs">ANSWER</p>
 
   <div>
-    <p class="l text-on-pic">Infradebt Ethical Infrastructure Debt Fund</p>
+    <p class="text-on-pic">Infradebt Ethical Infrastructure Debt Fund</p>
   </div>
 
   <p>Putting your super into large-scale solar and renewables projects.</p>
@@ -33,5 +33,6 @@
   .text-on-pic {
     font-family: $bold;
     text-transform: uppercase;
+    font-size: 3.4vh;
   }
 </style>

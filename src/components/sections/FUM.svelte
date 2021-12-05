@@ -18,4 +18,17 @@
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  div {
+    --size: 40vh;
+    background-color: $green;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 6vh;
+  }
 </style>
