@@ -1,25 +1,37 @@
 <script>
-  import WhiteBox from "../ui/WhiteBox.svelte";
+  import WhiteBoxWithNote from "../ui/WhiteBoxWithNote.svelte";
 </script>
 
-<WhiteBox>
+<WhiteBoxWithNote>
   <p class="xs">ANSWER</p>
 
-  <img
-    src="https://res.cloudinary.com/future-super/image/upload/c_scale,w_1200,f_auto,q_auto/v1623370119/infradebt.png"
-    alt="Solar Farm at Sunset"
-  />
-
-  <p>Infradebt Ethical Infrastructure Debt Fund</p>
+  <div>
+    <p class="l text-on-pic">Infradebt Ethical Infrastructure Debt Fund</p>
+  </div>
 
   <p>Putting your super into large-scale solar and renewables projects.</p>
-
-  <p>
-    We’ll provide a link at the end if you’d like to read more on this
-    investment
-  </p>
-</WhiteBox>
+</WhiteBoxWithNote>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  div {
+    border-radius: 40px;
+    height: 40vh;
+    width: 35vh;
+    max-width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("https://res.cloudinary.com/future-super/image/upload/c_scale,w_1200,f_auto,q_auto/v1623370119/infradebt.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  .text-on-pic {
+    font-family: $bold;
+    text-transform: uppercase;
+  }
 </style>

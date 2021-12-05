@@ -40,18 +40,7 @@
 
   function setScreen(i) {
     showing = i;
-    // console.log(screens[showing][0]);
   }
-
-  // function nextScreen() {
-  //   showing = showing + 1;
-  // }
-
-  // if (clientSide) {
-  //   setInterval(() => {
-  //     nextScreen();
-  //   }, 3000);
-  // }
 </script>
 
 <div class="grid">

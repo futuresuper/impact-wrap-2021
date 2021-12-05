@@ -20,7 +20,7 @@
     progress.set(1.1);
     setTimeout(() => {
       if (showing === index) {
-        setScreen(index + 1);
+        // setScreen(index + 1);
       }
     }, duration);
   } else if (showing > index) {
