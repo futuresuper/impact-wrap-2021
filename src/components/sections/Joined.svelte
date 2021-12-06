@@ -73,5 +73,13 @@
 
   .graph {
     height: 24vh;
+    max-width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    .container {
+      border: 0;
+      margin: 0 -20px;
+    }
   }
 </style>

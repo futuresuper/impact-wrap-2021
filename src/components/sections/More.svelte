@@ -1,5 +1,4 @@
 <script>
-  import SectionLayout from "../../layouts/SectionLayout.svelte";
 </script>
 
 <p>Want to read more about the investments mentioned?</p>

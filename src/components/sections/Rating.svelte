@@ -13,7 +13,6 @@
   @use "../../styles/" as *;
 
   button {
-    min-width: 40vw;
     font-size: 4vh;
   }
 </style>

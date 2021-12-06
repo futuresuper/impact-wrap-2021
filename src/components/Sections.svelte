@@ -16,8 +16,6 @@
   import Shake from "./sections/Shake.svelte";
   import Title from "./sections/Title.svelte";
 
-  const clientSide = !import.meta.env.SSR;
-
   const standardTime = 3000;
   const screens = [
     ["Title", standardTime], // Name, Time
@@ -41,6 +39,10 @@
   function setScreen(i) {
     showing = i;
   }
+
+  function nextScreen() {
+    showing = showing + 1;
+  }
 </script>
 
 <div class="grid">
@@ -59,7 +61,7 @@
     {:else if "Included" === screens[showing][0]}
       <Included />
     {:else if "Question" === screens[showing][0]}
-      <Question />
+      <Question {nextScreen} />
     {:else if "Answer" === screens[showing][0]}
       <Answer />
     {:else if "Shake" === screens[showing][0]}

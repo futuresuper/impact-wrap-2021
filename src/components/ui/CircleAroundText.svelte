@@ -51,38 +51,4 @@
   h2.smaller {
     font-size: $font-size-m;
   }
-
-  @media (max-width: 600px) {
-    .circle-container {
-      .text-in-middle {
-        max-width: 220px;
-        h2 {
-          margin-bottom: 8px;
-        }
-        p {
-          line-height: 125%;
-        }
-      }
-    }
-
-    h2.smaller {
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 440px) {
-    .circle-container {
-      .text-in-middle {
-        max-width: 140px;
-        h2 {
-          font-size: 14px;
-          margin-bottom: 4px;
-        }
-        p {
-          line-height: 110%;
-          font-size: 12px;
-        }
-      }
-    }
-  }
 </style>
