@@ -7,7 +7,7 @@
 <WhiteBox>
   <p class="xs">QUESTION</p>
 
-  <p>Guess your biggest investment?</p>
+  <p class="bold">Guess your biggest investment?</p>
 
   <div>
     <button on:click={nextScreen}>RESMED</button>

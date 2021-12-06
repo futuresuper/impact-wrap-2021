@@ -4,6 +4,7 @@
   export let screens = [];
   export let setScreen;
   export let showing;
+  export let paused;
 </script>
 
 <div class="container">
@@ -16,7 +17,7 @@
     style="grid-template-columns: repeat({screens.length}, 1fr)"
   >
     {#each screens as screen, index}
-      <Bar {setScreen} {index} {showing} duration={screen[1]} />
+      <Bar {setScreen} {index} {showing} duration={screen[1]} {paused} />
     {/each}
   </div>
 </div>

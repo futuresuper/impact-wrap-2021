@@ -35,7 +35,7 @@
 
   .number {
     font-family: $bold;
-    font-size: $font-size-xl;
+    font-size: min(28vw, 130px);
     color: $green;
   }
 </style>

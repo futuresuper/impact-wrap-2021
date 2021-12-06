@@ -16,42 +16,88 @@
   import Shake from "./sections/Shake.svelte";
   import Title from "./sections/Title.svelte";
 
-  const standardTime = 3000;
+  const standardTime = 4500;
   const screens = [
-    ["Title", standardTime], // Name, Time
+    ["Title", 0], // Name, Time.  0 = Pause at screen
     ["Option", 6000],
     ["Save", standardTime],
     ["Included", standardTime],
-    ["Question", standardTime],
-    ["Answer", standardTime],
+    ["Question", 0],
+    ["Answer", 6000],
     ["Shake", standardTime],
     ["Nightingale", standardTime],
     ["FiveB", standardTime],
     ["Joined", standardTime],
     ["Members", standardTime],
-    ["FUM", standardTime],
-    ["Rating", standardTime],
-    ["More", standardTime],
+    ["FUM", 5500],
+    ["Rating", 0],
+    ["More", 0],
   ];
 
   let showing = 0;
+  let paused = false;
+  let musicMuted = true;
+  let musicPaused = true;
+  let last = false;
 
   function setScreen(i) {
     showing = i;
   }
 
   function nextScreen() {
-    showing = showing + 1;
+    showing = showing === screens.length - 1 ? screens.length - 1 : showing + 1;
+  }
+
+  function goBack() {
+    showing = showing === 0 ? 0 : showing - 1;
+  }
+
+  function restart() {
+    showing = 0;
+  }
+
+  function togglePaused() {
+    paused = !paused;
+  }
+
+  function toggleMute() {
+    musicMuted = !musicMuted;
+  }
+
+  function getStarted(music) {
+    musicMuted = !music;
+    musicPaused = !music;
+    nextScreen();
+  }
+
+  $: if (showing === screens.length - 1) {
+    last = true;
+  } else {
+    last = false;
   }
 </script>
 
+{#if showing < 4}
+  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
+    <source src="audio/starter.mp3" type="audio/mpeg" />
+  </audio>
+{:else if showing === 4}
+  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
+    <source src="audio/thinking.mp3" type="audio/mpeg" />
+  </audio>
+{:else}
+  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
+    <source src="audio/end.mp3" type="audio/mpeg" />
+  </audio>
+{/if}
+
 <div class="grid">
   <header>
-    <Header {screens} {setScreen} {showing} />
+    <Header {screens} {setScreen} {showing} {paused} />
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title />
+      <Title {getStarted} />
     {:else if "Option" === screens[showing][0]}
       <Option />
     {:else if "Option" === screens[showing][0]}
@@ -77,13 +123,22 @@
     {:else if "FUM" === screens[showing][0]}
       <FUM />
     {:else if "Rating" === screens[showing][0]}
-      <Rating />
+      <Rating {nextScreen} />
     {:else if "More" === screens[showing][0]}
       <More />
     {/if}
   </section>
   <div class="controls">
-    <Controls />
+    <Controls
+      {togglePaused}
+      {goBack}
+      {toggleMute}
+      {showing}
+      {paused}
+      {last}
+      {restart}
+      {musicMuted}
+    />
   </div>
 </div>
 

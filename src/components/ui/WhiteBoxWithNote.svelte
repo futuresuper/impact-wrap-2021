@@ -15,7 +15,7 @@
     color: $black;
     border-radius: 20px;
     padding: 20px;
-    height: 63vh;
+    height: 58vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

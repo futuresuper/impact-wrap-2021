@@ -6,28 +6,34 @@
   export let index;
   export let setScreen;
   export let duration;
+  export let paused;
 
   const progress = tweened(0.2, {
     duration: duration,
     easing: linear,
   });
 
+  let timer;
   let barValue;
   $: barValue = showing > index ? 1 : 0;
 
-  $: if (showing === index) {
+  $: if (showing === index && duration && !paused) {
     barValue = $progress;
     progress.set(1.1);
-    setTimeout(() => {
+    timer = setTimeout(() => {
       if (showing === index) {
-        // setScreen(index + 1);
+        setScreen(index + 1);
       }
     }, duration);
-  } else if (showing > index) {
+  } else if (showing > index || (showing === index && !duration)) {
     barValue = 1;
   } else {
     barValue = 0;
     progress.set(0.2);
+  }
+
+  $: if (paused) {
+    clearTimeout(timer);
   }
 </script>
 

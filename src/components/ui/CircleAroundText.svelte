@@ -30,7 +30,7 @@
   @use "../../styles/" as *;
 
   .circle-container {
-    width: 54vh;
+    width: 40vh;
     max-width: 100%;
     margin-top: 0px;
     display: flex;

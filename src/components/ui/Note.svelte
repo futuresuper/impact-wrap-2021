@@ -1,7 +1,6 @@
 <div class="note">
   <p class="s">
-    We’ll provide a link at the end if you’d like to read more on this
-    investment
+    We’ll provide a link at the end so you can read more on this investment
   </p>
 </div>
 
