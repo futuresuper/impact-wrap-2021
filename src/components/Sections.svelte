@@ -37,7 +37,8 @@
   let showing = 0;
   let paused = false;
   let musicMuted = true;
-  let musicPaused = true;
+  let mainMusicPaused = true;
+  let thinkingMusicPaused = true;
   let last = false;
 
   function setScreen(i) {
@@ -66,7 +67,7 @@
 
   function getStarted(music) {
     musicMuted = !music;
-    musicPaused = !music;
+    mainMusicPaused = !music;
     nextScreen();
   }
 
@@ -75,21 +76,24 @@
   } else {
     last = false;
   }
+
+  $: if (showing === 4) {
+    mainMusicPaused = true;
+    thinkingMusicPaused = false;
+  }
+
+  $: if (showing === 5) {
+    mainMusicPaused = false;
+    thinkingMusicPaused = true;
+  }
 </script>
 
-{#if showing < 4}
-  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
-    <source src="audio/starter.mp3" type="audio/mpeg" />
-  </audio>
-{:else if showing === 4}
-  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
-    <source src="audio/thinking.mp3" type="audio/mpeg" />
-  </audio>
-{:else}
-  <audio bind:muted={musicMuted} bind:paused={musicPaused} autoplay>
-    <source src="audio/end.mp3" type="audio/mpeg" />
-  </audio>
-{/if}
+<audio bind:muted={musicMuted} bind:paused={mainMusicPaused} autoplay loop>
+  <source src="audio/main.mp3" type="audio/mpeg" />
+</audio>
+<audio bind:muted={musicMuted} bind:paused={thinkingMusicPaused} loop>
+  <source src="audio/think.mp3" type="audio/mpeg" />
+</audio>
 
 <div class="grid">
   <header>
