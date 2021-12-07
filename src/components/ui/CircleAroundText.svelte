@@ -51,4 +51,10 @@
   h2.smaller {
     font-size: $font-size-m;
   }
+
+  @media (max-width: 600px) {
+    .circle-container {
+      width: 34vh;
+    }
+  }
 </style>

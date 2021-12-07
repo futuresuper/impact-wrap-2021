@@ -162,4 +162,10 @@
     align-items: center;
     padding: 20px;
   }
+
+  @media (max-width: 600px) {
+    .grid {
+      height: 90vh;
+    }
+  }
 </style>

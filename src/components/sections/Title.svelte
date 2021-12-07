@@ -41,7 +41,6 @@
   button {
     background-color: $black;
     border-color: $green;
-    max-width: 400px;
 
     &:hover {
       background-color: $green;
@@ -54,6 +53,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .music {

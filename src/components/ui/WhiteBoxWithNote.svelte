@@ -15,11 +15,11 @@
     color: $black;
     border-radius: 20px;
     padding: 20px;
-    height: 58vh;
+    height: 52vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 </style>

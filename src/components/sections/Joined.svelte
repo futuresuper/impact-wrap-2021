@@ -42,9 +42,7 @@
   </svg>
 
   <div class="bottom">
-    <p class="s">You were the</p>
-    <p class="number bold">522nd</p>
-    <p class="s">person to join</p>
+    <p class="m">You were the <span class="bold">522nd</span> person to join</p>
   </div>
 </div>
 
@@ -54,6 +52,7 @@
   .container {
     border: 1px solid $green;
     border-radius: 20px;
+    width: 100%;
   }
 
   .top,
@@ -66,7 +65,7 @@
   }
 
   .number {
-    font-size: 6vh;
+    font-size: 4vh;
     margin-bottom: 6px;
     margin-top: -10px;
   }

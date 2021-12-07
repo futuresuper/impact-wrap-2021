@@ -21,7 +21,7 @@
 
   .circle {
     --size: 280px;
-    --max: 70vw;
+    --max: 60vw;
     border: 1px solid $green;
     border-radius: 50%;
     width: var(--size);
@@ -35,7 +35,7 @@
 
   .number {
     font-family: $bold;
-    font-size: min(28vw, 130px);
+    font-size: min(25vw, 130px);
     color: $green;
   }
 </style>

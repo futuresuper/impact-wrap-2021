@@ -19,4 +19,10 @@
       margin: 0;
     }
   }
+
+  @media (max-width: 600px) {
+    .note {
+      padding: 10px 20px;
+    }
+  }
 </style>

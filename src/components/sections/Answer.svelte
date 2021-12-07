@@ -9,11 +9,17 @@
     <p class="text-on-pic">Infradebt Ethical Infrastructure Debt Fund</p>
   </div>
 
-  <p>Putting your super into large-scale solar and renewables projects.</p>
+  <p class="putting">
+    Putting your super into large-scale solar and renewables projects.
+  </p>
 </WhiteBoxWithNote>
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  .putting {
+    margin-bottom: 0;
+  }
 
   div {
     border-radius: 40px;

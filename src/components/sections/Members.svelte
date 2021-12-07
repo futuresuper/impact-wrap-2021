@@ -46,9 +46,9 @@
   </svg>
 
   <div class="bottom">
-    <p class="s">There are now</p>
-    <p class="number bold">39,621^</p>
-    <p class="s">Future Super members</p>
+    <p class="m">
+      There's now <span class="bold">39,621^</span> members
+    </p>
     <p class="xs">^ As at October 2021</p>
   </div>
 </div>
@@ -59,6 +59,7 @@
   .container {
     border: 1px solid $green;
     border-radius: 20px;
+    width: 100%;
   }
 
   .top,
@@ -77,7 +78,6 @@
   }
 
   .graph {
-    margin-top: 40px;
     width: 100%;
   }
 </style>

@@ -9,4 +9,8 @@
 
 <style lang="scss">
   @use "../../styles/" as *;
+
+  img {
+    max-height: 50vh;
+  }
 </style>

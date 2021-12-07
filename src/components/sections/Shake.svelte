@@ -13,6 +13,6 @@
 
   img {
     border-radius: 40px;
-    max-height: 60vh;
+    max-height: 50vh;
   }
 </style>

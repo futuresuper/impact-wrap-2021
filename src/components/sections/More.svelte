@@ -13,6 +13,6 @@
 
   button {
     min-width: 40vw;
-    font-size: 3vh;
+    font-size: 2.6vh;
   }
 </style>

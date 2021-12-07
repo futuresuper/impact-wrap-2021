@@ -10,10 +10,11 @@
     color: $black;
     border-radius: $radius;
     padding: 20px;
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
   }
 </style>
