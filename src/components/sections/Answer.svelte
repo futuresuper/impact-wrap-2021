@@ -23,8 +23,8 @@
 
   div {
     border-radius: 40px;
-    height: 40vh;
-    width: 35vh;
+    height: 60vh;
+    width: 40vh;
     max-width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url("https://res.cloudinary.com/future-super/image/upload/c_scale,w_1200,f_auto,q_auto/v1623370119/infradebt.png");
@@ -34,11 +34,19 @@
     justify-content: center;
     color: white;
     margin-bottom: 20px;
+    padding: 10px;
   }
 
   .text-on-pic {
     font-family: $bold;
     text-transform: uppercase;
-    font-size: 3.4vh;
+    font-size: 3vh;
+  }
+
+  @media (max-width: 700px) {
+    div {
+      height: 44vh;
+      width: 30vh;
+    }
   }
 </style>

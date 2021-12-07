@@ -146,7 +146,7 @@
   @use "../styles/" as *;
 
   .grid {
-    height: 100vh;
+    height: 96vh;
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
@@ -165,7 +165,7 @@
 
   @media (max-width: 600px) {
     .grid {
-      height: 90vh;
+      height: 85vh;
     }
   }
 </style>

@@ -15,11 +15,17 @@
     color: $black;
     border-radius: 20px;
     padding: 20px;
-    height: 52vh;
+    height: 56vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 700px) {
+    .white-box {
+      height: 46vh;
+    }
   }
 </style>

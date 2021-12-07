@@ -19,7 +19,7 @@
   @use "../../styles/" as *;
 
   .circle {
-    --size: 30vh;
+    --size: 36vh;
     background-color: $green;
     border-radius: 50%;
     width: var(--size);
@@ -28,6 +28,13 @@
     align-items: center;
     justify-content: center;
     color: black;
-    font-size: 5vh;
+    font-size: 5.4vh;
+  }
+
+  @media (max-width: 600px) {
+    .circle {
+      --size: 26vh;
+      font-size: 4vh;
+    }
   }
 </style>

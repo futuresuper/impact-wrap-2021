@@ -19,6 +19,6 @@
   img {
     border-radius: 40px;
     margin-bottom: 20px;
-    max-height: 32vh;
+    max-height: 28vh;
   }
 </style>

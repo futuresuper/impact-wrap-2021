@@ -10,7 +10,9 @@
 <style lang="scss">
   @use "../../styles/" as *;
 
-  img {
-    max-height: 50vh;
+  @media (max-width: 600px) {
+    img {
+      max-height: 40vh;
+    }
   }
 </style>

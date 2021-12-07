@@ -57,9 +57,9 @@
   @use "../../styles/" as *;
 
   .container {
-    border: 1px solid $green;
-    border-radius: 20px;
-    width: 100%;
+    // border: 1px solid $green;
+    // border-radius: 20px;
+    // width: 100%;
   }
 
   .top,
@@ -79,5 +79,12 @@
 
   .graph {
     width: 100%;
+    max-height: 40vh;
+  }
+
+  @media (max-width: 600px) {
+    .graph {
+      max-height: 30vh;
+    }
   }
 </style>

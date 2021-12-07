@@ -14,7 +14,7 @@
   @use "../../styles/" as *;
 
   button {
-    font-size: 6vh;
+    font-size: 5vh;
     padding: 2px;
   }
 </style>

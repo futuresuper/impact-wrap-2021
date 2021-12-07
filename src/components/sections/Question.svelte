@@ -5,9 +5,11 @@
 </script>
 
 <WhiteBox>
-  <p class="xs">QUESTION</p>
+  <div>
+    <p class="xs question">QUESTION</p>
 
-  <p class="bold">Guess your biggest investment?</p>
+    <p class="bold">Guess your biggest investment?</p>
+  </div>
 
   <div>
     <button on:click={nextScreen}>RESMED</button>
@@ -28,8 +30,13 @@
 <style lang="scss">
   @use "../../styles/" as *;
 
+  .question {
+    margin-bottom: 4px;
+  }
+
   div {
     width: 100%;
+    max-width: 500px;
   }
 
   button {
