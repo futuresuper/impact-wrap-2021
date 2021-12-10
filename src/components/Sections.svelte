@@ -77,15 +77,15 @@
     last = false;
   }
 
-  $: if (showing === 4) {
-    mainMusicPaused = true;
-    thinkingMusicPaused = false;
-  }
+  // $: if (showing === 4) {
+  //   mainMusicPaused = true;
+  //   thinkingMusicPaused = false;
+  // }
 
-  $: if (showing === 5) {
-    mainMusicPaused = false;
-    thinkingMusicPaused = true;
-  }
+  // $: if (showing === 5) {
+  //   mainMusicPaused = false;
+  //   thinkingMusicPaused = true;
+  // }
 </script>
 
 <audio bind:muted={musicMuted} bind:paused={mainMusicPaused} autoplay loop>
