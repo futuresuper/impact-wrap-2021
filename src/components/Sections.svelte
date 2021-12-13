@@ -76,23 +76,10 @@
   } else {
     last = false;
   }
-
-  // $: if (showing === 4) {
-  //   mainMusicPaused = true;
-  //   thinkingMusicPaused = false;
-  // }
-
-  // $: if (showing === 5) {
-  //   mainMusicPaused = false;
-  //   thinkingMusicPaused = true;
-  // }
 </script>
 
 <audio bind:muted={musicMuted} bind:paused={mainMusicPaused} autoplay loop>
-  <source src="audio/main.mp3" type="audio/mpeg" />
-</audio>
-<audio bind:muted={musicMuted} bind:paused={thinkingMusicPaused} loop>
-  <source src="audio/think.mp3" type="audio/mpeg" />
+  <source src="audio/track.mp3" type="audio/mpeg" />
 </audio>
 
 <div class="grid">
