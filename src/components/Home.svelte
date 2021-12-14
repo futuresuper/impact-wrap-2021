@@ -11,7 +11,7 @@
 
   if (clientSide) {
     getData(url1);
-    getData(url2);
+    // getData(url2);
   }
 
   async function getData(url = "") {
