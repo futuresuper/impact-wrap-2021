@@ -1,4 +1,20 @@
 <script>
+  export let user;
+  let rank;
+
+  $: if (user.rank) {
+    let str = user.rank.toLocaleString().toString();
+    let lastNum = str[str.length - 1];
+    if (lastNum === "1") {
+      rank = str + "st";
+    } else if (lastNum === "2") {
+      rank = str + "nd";
+    } else if (lastNum === "3") {
+      rank = str + "rd";
+    } else {
+      rank = str + "th";
+    }
+  }
 </script>
 
 <div class="container">
@@ -18,7 +34,7 @@
       />
     </svg>
 
-    <p class="s">You joined in April 2018</p>
+    <p class="s">You joined in {user.joined}</p>
   </div>
 
   <svg
@@ -42,7 +58,9 @@
   </svg>
 
   <div class="bottom">
-    <p class="m">You were the <span class="bold">522nd</span> person to join</p>
+    <p class="m">
+      You were the <span class="bold">{rank}</span> person to join
+    </p>
   </div>
 </div>
 
@@ -50,9 +68,8 @@
   @use "../../styles/" as *;
 
   .container {
-    // border: 1px solid $green;
-    // border-radius: 20px;
-    // width: 100%;
+    border: 1px solid $green;
+    border-radius: 20px;
   }
 
   .top,
@@ -70,13 +87,15 @@
     margin-top: -10px;
   }
 
-  .graph {
-    max-height: 30vh;
-  }
+  @media (max-width: 440px) {
+    .container {
+      border: 0;
+      width: 100%;
+      margin: 0 -20px;
+    }
 
-  @media (max-width: 600px) {
     .graph {
-      max-height: 20vh;
+      margin: 0 -20px;
     }
   }
 </style>

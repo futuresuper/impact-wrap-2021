@@ -2,6 +2,13 @@
   import WhiteBox from "../../components/ui/WhiteBox.svelte";
 
   export let nextScreen;
+  export let user;
+  export let options;
+  let invName = "ARTESIAN FUND"; // RPG
+
+  if (user.option === options.RPG) {
+    invName = "INFRADEBT ETHICAL FUND";
+  }
 </script>
 
 <WhiteBox>
@@ -17,7 +24,7 @@
   </div>
 
   <div>
-    <button on:click={nextScreen}>INFRADEBT ETHICAL FUND</button>
+    <button on:click={nextScreen}>{invName}</button>
     <p class="s">Lends To Renewables Projects</p>
   </div>
 

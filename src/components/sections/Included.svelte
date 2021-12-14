@@ -1,10 +1,19 @@
 <script>
+  export let user;
+  export let options;
+  let number = 552; // RPG
+
+  if (user.option === options.BI) {
+    number = 450;
+  } else if (user.option === options.PENSION) {
+    number = 427;
+  }
 </script>
 
 <p>Your super included</p>
 
 <div class="circle">
-  <div class="number">552</div>
+  <div class="number">{number}</div>
 </div>
 
 <div>

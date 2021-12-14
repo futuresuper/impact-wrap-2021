@@ -2,7 +2,8 @@
   import CircleAroundText from "../ui/CircleAroundText.svelte";
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
-  export let name = "Name";
+  export let user;
+  let name = user.name ? user.name : "Welcome";
   export let getStarted;
   let music = true;
 </script>

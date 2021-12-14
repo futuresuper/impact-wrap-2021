@@ -4,10 +4,10 @@
   const clientSide = !import.meta.env.SSR;
 
   // const cid = "90aaedd7-7329-4ac5-bfa9-6dd586300c2f";
-  const cid = "94f7111e-264d-4089-9db2-2c49b7f89eea";
+  const cid = "9519a419-4af8-418c-8d6b-d3acfcb20743";
 
-  const url1 = "https://api.fsstaging.com.au/api/auth-user";
-  const url2 = "https://api.fsstaging.com.au/api/members/045972";
+  const url1 = "https://api.futuresuper.com.au/api/auth-user";
+  const url2 = "https://api.futuresuper.com.au/api/members/045972";
 
   if (clientSide) {
     getData(url1);
@@ -20,17 +20,32 @@
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://api.fsstaging.com.au",
+        "Access-Control-Allow-Origin": "https://api.futuresuper.com.au",
         cid: cid,
       },
       credentials: "include",
     });
     console.log(response);
   }
+
+  const options = {
+    RPG: "Renewables Plus Growth",
+    BI: "Balanced Impact",
+    PENSION: "Balanced Growth Pension",
+  };
+
+  let memberNumber = "045972";
+
+  let user = {
+    name: "Andrew",
+    option: options.RPG,
+    rank: 7126,
+    joined: "March 2017",
+  };
 </script>
 
 <div class="container">
-  <Sections />
+  <Sections {user} {options} />
 </div>
 
 <style>

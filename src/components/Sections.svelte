@@ -34,6 +34,8 @@
     ["More", 0],
   ];
 
+  export let user;
+  export let options;
   let showing = 0;
   let paused = false;
   let musicMuted = true;
@@ -88,19 +90,17 @@
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title {getStarted} />
+      <Title {getStarted} {user} />
     {:else if "Option" === screens[showing][0]}
-      <Option />
-    {:else if "Option" === screens[showing][0]}
-      <Option />
+      <Option {user} {options} />
     {:else if "Save" === screens[showing][0]}
       <Save />
     {:else if "Included" === screens[showing][0]}
-      <Included />
+      <Included {user} {options} />
     {:else if "Question" === screens[showing][0]}
-      <Question {nextScreen} />
+      <Question {nextScreen} {user} {options} />
     {:else if "Answer" === screens[showing][0]}
-      <Answer />
+      <Answer {user} {options} />
     {:else if "Shake" === screens[showing][0]}
       <Shake />
     {:else if "Nightingale" === screens[showing][0]}
@@ -108,7 +108,7 @@
     {:else if "FiveB" === screens[showing][0]}
       <FiveB />
     {:else if "Joined" === screens[showing][0]}
-      <Joined />
+      <Joined {user} />
     {:else if "Members" === screens[showing][0]}
       <Members />
     {:else if "FUM" === screens[showing][0]}

@@ -57,9 +57,8 @@
   @use "../../styles/" as *;
 
   .container {
-    // border: 1px solid $green;
-    // border-radius: 20px;
-    // width: 100%;
+    border: 1px solid $green;
+    border-radius: 20px;
   }
 
   .top,
@@ -78,13 +77,18 @@
   }
 
   .graph {
-    width: 100%;
-    max-height: 40vh;
+    margin-top: 40px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 440px) {
+    .container {
+      border: 0;
+      width: 100%;
+      margin: 0 -20px;
+    }
+
     .graph {
-      max-height: 30vh;
+      margin: 40px -20px 0 -20px;
     }
   }
 </style>
