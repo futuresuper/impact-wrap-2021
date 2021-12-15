@@ -21,7 +21,8 @@
   async function getUserDetails() {
     let response = await getData(url1);
     console.log(response);
-    userId = response.user_id;
+    console.log(response.body);
+    userId = response.body.user_id;
     if (userId) {
       userDetails = await getData(url2 + userId);
     }
