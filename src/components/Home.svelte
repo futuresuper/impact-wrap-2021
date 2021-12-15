@@ -11,18 +11,19 @@
   const url3 =
     "https://67l8qspd50.execute-api.ap-southeast-2.amazonaws.com/prod/rank?member=";
 
-  let user;
+  let user = {
+    name: "Welcome",
+    option: options.RPG,
+    rank: "12736",
+    joined: "April 2020",
+  };
   let loading = true;
   let loggedIn = false;
   let userDetails;
   let member;
-  let name;
-  let option;
-  let rank;
-  let joined;
 
   if (clientSide) {
-    console.log("18");
+    console.log("19");
     getUserDetails();
   }
 
@@ -34,20 +35,20 @@
       userDetails = await getData(url2 + member);
       console.log(userDetails);
       if (userDetails) {
-        name = userDetails.contact.first_name;
-        console.log(name);
-        option =
+        user.name = userDetails.contact.first_name;
+        console.log(user.name);
+        user.option =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
-        console.log(option);
+        console.log(user.option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
-        rank = dateInfo.rank;
-        console.log(rank);
-        joined = dateInfo.joined;
-        console.log(joined);
+        user.rank = dateInfo.rank;
+        console.log(user.rank);
+        user.joined = dateInfo.joined;
+        console.log(user.joined);
       }
     }
 
@@ -87,15 +88,6 @@
 
   $: if (userDetails) {
     option = invIdToOption[userDetails.accounts[0].investment_option_id];
-  }
-
-  $: if (name || option || rank || joined) {
-    user = {
-      name,
-      option,
-      rank,
-      joined,
-    };
   }
 
   $: console.log(user);
