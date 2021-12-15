@@ -3,10 +3,18 @@
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
   export let name;
+  export let option;
   export let getStarted;
-  export let loggedIn;
+  let loggedIn;
   export let loading;
   let music = true;
+
+  $: console.log(name);
+  $: console.log(option);
+
+  $: if (name && option) {
+    loggedIn = true;
+  }
 </script>
 
 <CircleAroundText heading={name.toUpperCase()} textColour="#00F724">

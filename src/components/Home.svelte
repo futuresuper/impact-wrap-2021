@@ -29,7 +29,7 @@
   let rank = false;
   let joined = false;
   let loading = true;
-  let loggedIn = false;
+  // let loggedIn = false;
   let userDetails;
   let member;
 
@@ -53,7 +53,7 @@
             userDetails.accounts[0].investments[0].investment_option_id
           ];
         if (name && option) {
-          loggedIn = true;
+          // loggedIn = true;
           loading = false;
         }
         console.log(option);
@@ -68,7 +68,7 @@
     }
 
     if (!userDetails) {
-      loggedIn = false;
+      // loggedIn = false;
       loading = false;
     }
   }
@@ -92,11 +92,11 @@
     return response.json();
   }
 
-  $: console.log("logged in: " + loggedIn);
+  // $: console.log("logged in: " + loggedIn);
 </script>
 
 <div class="container">
-  <Sections {name} {option} {joined} {rank} {options} {loading} {loggedIn} />
+  <Sections {name} {option} {joined} {rank} {options} {loading} />
 </div>
 
 <style>
