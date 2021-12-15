@@ -21,7 +21,7 @@
   let joined;
 
   if (clientSide) {
-    console.log("14");
+    console.log("15");
     getUserDetails();
   }
 
@@ -59,14 +59,7 @@
   }
 
   async function getData2(url = "") {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
+    const response = await fetch(url);
     return response.json();
   }
 
