@@ -1,18 +1,19 @@
 <script>
-  export let user;
-  let rank;
+  export let joined;
+  export let rank;
+  let rankWord;
 
-  $: if (user.rank) {
+  $: if (rank) {
     let str = user.rank.toLocaleString().toString();
     let lastNum = str[str.length - 1];
     if (lastNum === "1") {
-      rank = str + "st";
+      rankWord = str + "st";
     } else if (lastNum === "2") {
-      rank = str + "nd";
+      rankWord = str + "nd";
     } else if (lastNum === "3") {
-      rank = str + "rd";
+      rankWord = str + "rd";
     } else {
-      rank = str + "th";
+      rankWord = str + "th";
     }
   }
 </script>
@@ -34,7 +35,7 @@
       />
     </svg>
 
-    <p class="s">You joined in {user.joined}</p>
+    <p class="s">You joined in {joined}</p>
   </div>
 
   <svg
@@ -59,7 +60,7 @@
 
   <div class="bottom">
     <p class="m">
-      You were the <span class="bold">{rank}</span> person to join
+      You were the <span class="bold">{rankWord}</span> person to join
     </p>
   </div>
 </div>

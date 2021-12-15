@@ -1,11 +1,11 @@
 <script>
   import WhiteBoxWithNote from "../ui/WhiteBoxWithNote.svelte";
 
-  export let user;
+  export let option;
   export let options;
   let invName = "Artesian Sustainability and Green Bond Fund"; // RPG
 
-  if (user.option === options.RPG) {
+  if (option === options.RPG) {
     invName = "Infradebt Ethical Infrastructure Debt Fund";
   }
 </script>

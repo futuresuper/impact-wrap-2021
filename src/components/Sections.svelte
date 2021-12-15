@@ -34,7 +34,10 @@
     ["More", 0],
   ];
 
-  export let user;
+  export let name;
+  export let option;
+  export let joined;
+  export let rank;
   export let options;
   let showing = 0;
   let paused = false;
@@ -90,17 +93,17 @@
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title {getStarted} {user} />
+      <Title {getStarted} {name} />
     {:else if "Option" === screens[showing][0]}
-      <Option {user} {options} />
+      <Option {option} {options} />
     {:else if "Save" === screens[showing][0]}
       <Save />
     {:else if "Included" === screens[showing][0]}
-      <Included {user} {options} />
+      <Included {option} {options} />
     {:else if "Question" === screens[showing][0]}
-      <Question {nextScreen} {user} {options} />
+      <Question {nextScreen} {option} {options} />
     {:else if "Answer" === screens[showing][0]}
-      <Answer {user} {options} />
+      <Answer {option} {options} />
     {:else if "Shake" === screens[showing][0]}
       <Shake />
     {:else if "Nightingale" === screens[showing][0]}
@@ -108,7 +111,7 @@
     {:else if "FiveB" === screens[showing][0]}
       <FiveB />
     {:else if "Joined" === screens[showing][0]}
-      <Joined {user} />
+      <Joined {joined} {rank} />
     {:else if "Members" === screens[showing][0]}
       <Members />
     {:else if "FUM" === screens[showing][0]}

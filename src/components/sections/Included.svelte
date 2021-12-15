@@ -1,11 +1,11 @@
 <script>
-  export let user;
+  export let option;
   export let options;
   let number = 552; // RPG
 
-  if (user.option === options.BI) {
+  if (option === options.BI) {
     number = 450;
-  } else if (user.option === options.PENSION) {
+  } else if (option === options.PENSION) {
     number = 427;
   }
 </script>

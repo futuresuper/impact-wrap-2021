@@ -1,18 +1,18 @@
 <script>
-  export let user;
+  export let option;
   export let options;
   let percent = false;
 
-  if (user.option === options.RPG) {
+  if (option === options.RPG) {
     percent = 54;
-  } else if (user.option === options.BI) {
+  } else if (option === options.BI) {
     percent = 32;
   }
 </script>
 
 <p class="m">
-  Your super was in {user.option}
-  {user.option === options.RPG
+  Your super was in {option}
+  {option === options.RPG
     ? ", which aims to achieve high financial growth and positive environmental impact."
     : "."}
 </p>

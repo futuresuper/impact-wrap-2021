@@ -20,19 +20,17 @@
     "11": options.RPG,
   };
 
-  let user = {
-    name: "Welcome",
-    option: options.RPG,
-    rank: "12736",
-    joined: "April 2020",
-  };
+  let name = "Welcome";
+  let option = options.RPG;
+  let rank = false;
+  let joined = false;
   let loading = true;
   let loggedIn = false;
   let userDetails;
   let member;
 
   if (clientSide) {
-    console.log("19");
+    console.log("20");
     getUserDetails();
   }
 
@@ -44,20 +42,20 @@
       userDetails = await getData(url2 + member);
       console.log(userDetails);
       if (userDetails) {
-        user.name = userDetails.contact.first_name;
-        console.log(user.name);
-        user.option =
+        name = userDetails.contact.first_name;
+        console.log(name);
+        option =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
-        console.log(user.option);
+        console.log(option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
-        user.rank = dateInfo.rank;
-        console.log(user.rank);
-        user.joined = dateInfo.joined;
-        console.log(user.joined);
+        rank = dateInfo.rank;
+        console.log(rank);
+        joined = dateInfo.joined;
+        console.log(joined);
       }
     }
 
@@ -89,12 +87,10 @@
   $: if (userDetails) {
     option = invIdToOption[userDetails.accounts[0].investment_option_id];
   }
-
-  $: console.log(user);
 </script>
 
 <div class="container">
-  <Sections {user} {options} />
+  <Sections {name} {option} {joined} {rank} {options} />
 </div>
 
 <style>
