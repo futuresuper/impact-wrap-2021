@@ -11,6 +11,7 @@
   const url3 =
     "https://67l8qspd50.execute-api.ap-southeast-2.amazonaws.com/prod/rank?member=";
 
+  let user;
   let loading = true;
   let loggedIn = false;
   let userDetails;
@@ -21,7 +22,7 @@
   let joined;
 
   if (clientSide) {
-    console.log("16");
+    console.log("17");
     getUserDetails();
   }
 
@@ -34,11 +35,16 @@
       console.log(userDetails);
       name = userDetails.contact.first_name;
       console.log(name);
-      option = invIdToOption[userDetails.accounts[0].investment_option_id];
+      option =
+        invIdToOption[
+          userDetails.accounts[0].investments[0].investment_option_id
+        ];
       console.log(option);
       let dateInfo = await getData2(url3 + parseInt(member));
       rank = dateInfo.rank;
+      console.log(rank);
       joined = dateInfo.joined;
+      console.log(joined);
     }
 
     if (!userDetails) {
@@ -79,12 +85,14 @@
     option = invIdToOption[userDetails.accounts[0].investment_option_id];
   }
 
-  let user = {
-    name,
-    option,
-    rank,
-    joined,
-  };
+  $: if (name || option || rank || joined) {
+    user = {
+      name,
+      option,
+      rank,
+      joined,
+    };
+  }
 
   $: console.log(user);
 </script>
