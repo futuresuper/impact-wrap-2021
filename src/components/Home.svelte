@@ -11,6 +11,15 @@
   const url3 =
     "https://67l8qspd50.execute-api.ap-southeast-2.amazonaws.com/prod/rank?member=";
 
+  const options = {
+    RPG: "Renewables Plus Growth",
+    BI: "Balanced Impact",
+    PENSION: "Balanced Growth Pension",
+  };
+  const invIdToOption = {
+    "11": options.RPG,
+  };
+
   let user = {
     name: "Welcome",
     option: options.RPG,
@@ -76,15 +85,6 @@
     const response = await fetch(url);
     return response.json();
   }
-
-  const options = {
-    RPG: "Renewables Plus Growth",
-    BI: "Balanced Impact",
-    PENSION: "Balanced Growth Pension",
-  };
-  const invIdToOption = {
-    "11": options.RPG,
-  };
 
   $: if (userDetails) {
     option = invIdToOption[userDetails.accounts[0].investment_option_id];
