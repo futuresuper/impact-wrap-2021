@@ -13,6 +13,7 @@
   let loggedIn = false;
   let userId = false;
   let userDetails = false;
+  let investmentOption = false;
 
   if (clientSide) {
     getUserDetails();
@@ -20,13 +21,16 @@
 
   async function getUserDetails() {
     let response = await getData(url1);
-    console.log("7");
-    console.log(response);
     userId = response.user_id;
+
     if (userId) {
       userDetails = await getData(url2 + userId);
     }
-    console.log(userDetails);
+
+    if (!userDetails) {
+      loggedIn = false;
+      loading = false;
+    }
   }
 
   async function getData(url = "") {
@@ -48,12 +52,18 @@
     BI: "Balanced Impact",
     PENSION: "Balanced Growth Pension",
   };
+  const invIdToOption = {
+    "11": options.RPG,
+  };
 
-  let memberNumber = "045972";
+  $: if (userDetails) {
+    investmentOption =
+      invIdToOption[userDetails.accounts[0].investment_option_id];
+  }
 
   let user = {
-    name: "Andrew",
-    option: options.RPG,
+    name: userDetails.contact.first_name ? userDetails.contact.first_name : "",
+    option: investmentOption,
     rank: 7126,
     joined: "March 2017",
   };
