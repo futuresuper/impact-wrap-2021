@@ -21,7 +21,7 @@
   };
 
   let name = "Welcome";
-  let invOption = options.RPG;
+  let option = options.RPG;
   let rank = false;
   let joined = false;
   let loading = true;
@@ -30,7 +30,7 @@
   let member;
 
   if (clientSide) {
-    console.log("24");
+    console.log("25");
     getUserDetails();
   }
 
@@ -44,11 +44,11 @@
       if (userDetails) {
         name = userDetails.contact.first_name;
         console.log(name);
-        invOption =
+        option =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
-        console.log(invOption);
+        console.log(option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
@@ -86,7 +86,7 @@
 </script>
 
 <div class="container">
-  <Sections {name} {invOption} {joined} {rank} {options} />
+  <Sections {name} {option} {joined} {rank} {options} />
 </div>
 
 <style>

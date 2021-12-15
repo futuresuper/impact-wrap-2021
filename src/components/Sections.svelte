@@ -35,7 +35,7 @@
   ];
 
   export let name;
-  export let invOption;
+  export let option;
   export let joined;
   export let rank;
   export let options;
@@ -95,15 +95,15 @@
     {#if "Title" === screens[showing][0]}
       <Title {getStarted} {name} />
     {:else if "Option" === screens[showing][0]}
-      <Option {invOption} {options} />
+      <Option {option} {options} />
     {:else if "Save" === screens[showing][0]}
       <Save />
     {:else if "Included" === screens[showing][0]}
-      <Included {invOption} {options} />
+      <Included {option} {options} />
     {:else if "Question" === screens[showing][0]}
-      <Question {nextScreen} {invOption} {options} />
+      <Question {nextScreen} {option} {options} />
     {:else if "Answer" === screens[showing][0]}
-      <Answer {invOption} {options} />
+      <Answer {option} {options} />
     {:else if "Shake" === screens[showing][0]}
       <Shake />
     {:else if "Nightingale" === screens[showing][0]}
