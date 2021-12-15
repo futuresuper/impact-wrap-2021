@@ -11,7 +11,7 @@
 
   $: console.log(name);
   $: console.log(option);
-  $: console.log("logged in: " + loggedIn);
+  // $: console.log("logged in: " + loggedIn);
 
   // $: if (name && option) {
   //   loggedIn = true;
