@@ -8,6 +8,7 @@
   } else if (option === options.BI) {
     percent = 32;
   }
+  console.log(option);
 </script>
 
 <p class="m">

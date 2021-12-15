@@ -4,7 +4,7 @@
   let rankWord;
 
   $: if (rank) {
-    let str = user.rank.toLocaleString().toString();
+    let str = rank.toLocaleString().toString();
     let lastNum = str[str.length - 1];
     if (lastNum === "1") {
       rankWord = str + "st";
