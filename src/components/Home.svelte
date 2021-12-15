@@ -21,7 +21,7 @@
   let joined;
 
   if (clientSide) {
-    console.log("15");
+    console.log("16");
     getUserDetails();
   }
 
@@ -31,9 +31,12 @@
 
     if (member) {
       userDetails = await getData(url2 + member);
+      console.log(userDetails);
       name = userDetails.contact.first_name;
+      console.log(name);
       option = invIdToOption[userDetails.accounts[0].investment_option_id];
-      dateInfo = await getData2(url3 + parseInt(member));
+      console.log(option);
+      let dateInfo = await getData2(url3 + parseInt(member));
       rank = dateInfo.rank;
       joined = dateInfo.joined;
     }
