@@ -5,7 +5,7 @@
   export let name;
   export let option;
   export let getStarted;
-  let loggedIn;
+  // let loggedIn;
   export let loading;
   let music = true;
 
@@ -13,9 +13,9 @@
   $: console.log(option);
   $: console.log("logged in: " + loggedIn);
 
-  $: if (name && option) {
-    loggedIn = true;
-  }
+  // $: if (name && option) {
+  //   loggedIn = true;
+  // }
 </script>
 
 <CircleAroundText heading={name.toUpperCase()} textColour="#00F724">
@@ -26,7 +26,7 @@
   {#if loading}
     <p class="m">Loading...</p>
   {:else}
-    {#if loggedIn}
+    {#if name && option}
       <p class="s">Let's look at what your money did this year</p>
     {:else}
       <p class="xs">
@@ -40,7 +40,7 @@
     {/if}
 
     <button on:click={() => getStarted(music)}
-      >{loggedIn ? "Let's Go →" : "View Impact Recap Example Version"}
+      >{name && option ? "Let's Go →" : "View Impact Recap Example Version"}
     </button>
 
     <div class="music" on:click={() => (music = !music)}>
