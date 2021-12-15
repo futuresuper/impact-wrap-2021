@@ -7,11 +7,24 @@
   const cid = "9519a419-4af8-418c-8d6b-d3acfcb20743";
 
   const url1 = "https://api.futuresuper.com.au/api/auth-user";
-  const url2 = "https://api.futuresuper.com.au/api/members/045972";
+  const url2 = "https://api.futuresuper.com.au/api/members/";
+
+  let loading = true;
+  let loggedIn = false;
+  let userId = false;
+  let userDetails = false;
 
   if (clientSide) {
-    getData(url1);
-    // getData(url2);
+    getUserDetails();
+  }
+
+  async function getUserDetails() {
+    let response = await getData(url1);
+    userId = response.user_id;
+    if (userId) {
+      userDetails = await getData(url2 + userId);
+    }
+    console.log(userDetails);
   }
 
   async function getData(url = "") {
