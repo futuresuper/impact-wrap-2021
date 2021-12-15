@@ -20,7 +20,7 @@
 
   async function getUserDetails() {
     let response = await getData(url1);
-    console.log("5");
+    console.log("6");
     console.log(response);
     userId = response.user_id;
     if (userId) {
@@ -30,7 +30,7 @@
   }
 
   async function getData(url = "") {
-    const response = await fetch(url, {
+    fetch(url, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -39,8 +39,11 @@
         cid: cid,
       },
       credentials: "include",
-    });
-    return response;
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        return data;
+      });
   }
 
   const options = {
