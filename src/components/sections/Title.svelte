@@ -4,6 +4,8 @@
 
   export let name;
   export let getStarted;
+  export let loggedIn;
+  export let loading;
   let music = true;
 </script>
 
@@ -12,23 +14,40 @@
 </CircleAroundText>
 
 <div class="bottom">
-  <p class="m">Let's look at what your money did this year</p>
-
-  <button on:click={() => getStarted(music)}> Let's Go → </button>
-
-  <div class="music" on:click={() => (music = !music)}>
-    Sound
-
-    {#if music}
-      <div class="toggle-container on">
-        <div class="dot on" />
-      </div>
+  {#if loading}
+    <p class="m">Loading...</p>
+  {:else}
+    {#if loggedIn}
+      <p class="s">Let's look at what your money did this year</p>
     {:else}
-      <div class="toggle-container off">
-        <div class="dot off" />
-      </div>
+      <p class="xs">
+        <span class="bold"
+          >Looks like you're not logged in to your Account right now...
+        </span><a href="https://my.futuresuper.com.au/"
+          >Login first to get personalised Impact Recap</a
+        > or click below to view an example version with information for the 'Renewables
+        Plus Growth' option
+      </p>
     {/if}
-  </div>
+
+    <button on:click={() => getStarted(music)}
+      >{loggedIn ? "Let's Go →" : "View Impact Recap Example Version"}
+    </button>
+
+    <div class="music" on:click={() => (music = !music)}>
+      Sound
+
+      {#if music}
+        <div class="toggle-container on">
+          <div class="dot on" />
+        </div>
+      {:else}
+        <div class="toggle-container off">
+          <div class="dot off" />
+        </div>
+      {/if}
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">

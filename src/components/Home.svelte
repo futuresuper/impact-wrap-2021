@@ -15,9 +15,13 @@
     RPG: "Renewables Plus Growth",
     BI: "Balanced Impact",
     PENSION: "Balanced Growth Pension",
+    INDEXED: "Balanced Indexed",
   };
   const invIdToOption = {
     "11": options.RPG,
+    "15": options.PENSION,
+    "10": options.BI,
+    "12": options.INDEXED,
   };
 
   let name = "Welcome";
@@ -40,22 +44,26 @@
 
     if (member) {
       userDetails = await getData(url2 + member);
-      console.log(userDetails);
+      // console.log(userDetails);
       if (userDetails) {
         name = userDetails.contact.first_name;
-        console.log(name);
+        // console.log(name);
         option =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
-        console.log(option);
+        if (name && option) {
+          loggedIn = true;
+          loading = false;
+        }
+        // console.log(option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
         rank = dateInfo.rank;
         console.log(rank);
         joined = dateInfo.joined;
-        console.log(joined);
+        // console.log(joined);
       }
     }
 
@@ -86,7 +94,7 @@
 </script>
 
 <div class="container">
-  <Sections {name} {option} {joined} {rank} {options} />
+  <Sections {name} {option} {joined} {rank} {options} {loading} {loggedIn} />
 </div>
 
 <style>

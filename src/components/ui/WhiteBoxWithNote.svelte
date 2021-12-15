@@ -5,8 +5,8 @@
 <div class="white-box">
   <slot />
 </div>
-<Note />
 
+<!-- <Note /> -->
 <style lang="scss">
   @use "../../styles/" as *;
 

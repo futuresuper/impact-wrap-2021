@@ -13,8 +13,7 @@
   Disrupting the housing market with affordable, fossil fuel free developments.
 </p>
 
-<Note />
-
+<!-- <Note /> -->
 <style lang="scss">
   @use "../../styles/" as *;
 

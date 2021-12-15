@@ -43,6 +43,7 @@
   let paused = false;
   let musicMuted = true;
   let mainMusicPaused = true;
+  let musicVolume = 0.4;
   let thinkingMusicPaused = true;
   let last = false;
 
@@ -83,7 +84,13 @@
   }
 </script>
 
-<audio bind:muted={musicMuted} bind:paused={mainMusicPaused} autoplay loop>
+<audio
+  bind:muted={musicMuted}
+  bind:paused={mainMusicPaused}
+  bind:volume={musicVolume}
+  autoplay
+  loop
+>
   <source src="audio/track.mp3" type="audio/mpeg" />
 </audio>
 

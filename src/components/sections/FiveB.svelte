@@ -11,8 +11,7 @@
 
 <p>Innovating renewables tech with portable solar farms.</p>
 
-<Note />
-
+<!-- <Note /> -->
 <style lang="scss">
   @use "../../styles/" as *;
 

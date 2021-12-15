@@ -35,7 +35,11 @@
       />
     </svg>
 
-    <p class="s">You joined in {joined}</p>
+    {#if joined}
+      <p class="s">You joined in {joined}</p>
+    {:else}
+      <p class="s">Future Super has grown a lot since you joined</p>
+    {/if}
   </div>
 
   <svg
@@ -58,11 +62,13 @@
     />
   </svg>
 
-  <div class="bottom">
-    <p class="m">
-      You were the <span class="bold">{rankWord}</span> person to join
-    </p>
-  </div>
+  {#if rank && rankWord}
+    <div class="bottom">
+      <p class="m">
+        You were the <span class="bold">{rankWord}</span> person to join
+      </p>
+    </div>
+  {/if}
 </div>
 
 <style lang="scss">
