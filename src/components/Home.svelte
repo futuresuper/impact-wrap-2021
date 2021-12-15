@@ -8,7 +8,8 @@
 
   const url1 = "https://api.futuresuper.com.au/api/auth-user";
   const url2 = "https://api.futuresuper.com.au/api/members/";
-  const url3 = "https://api.futuresuper.com.au/api/members/";
+  const url3 =
+    "https://67l8qspd50.execute-api.ap-southeast-2.amazonaws.com/prod/rank?member=";
 
   let loading = true;
   let loggedIn = false;
@@ -31,9 +32,9 @@
       userDetails = await getData(url2 + member);
       name = userDetails.contact.first_name;
       option = invIdToOption[userDetails.accounts[0].investment_option_id];
-      dateInfo = await getData(url3 + member);
-      rank = 123; // dateInfo.rank;
-      joined = "March 2016"; // dateInfo.joined;
+      dateInfo = await getData(url3 + parseInt(member));
+      rank = dateInfo.rank;
+      joined = dateInfo.joined;
     }
 
     if (!userDetails) {
