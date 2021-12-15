@@ -22,7 +22,7 @@
   let joined;
 
   if (clientSide) {
-    console.log("17");
+    console.log("18");
     getUserDetails();
   }
 
@@ -33,18 +33,22 @@
     if (member) {
       userDetails = await getData(url2 + member);
       console.log(userDetails);
-      name = userDetails.contact.first_name;
-      console.log(name);
-      option =
-        invIdToOption[
-          userDetails.accounts[0].investments[0].investment_option_id
-        ];
-      console.log(option);
+      if (userDetails) {
+        name = userDetails.contact.first_name;
+        console.log(name);
+        option =
+          invIdToOption[
+            userDetails.accounts[0].investments[0].investment_option_id
+          ];
+        console.log(option);
+      }
       let dateInfo = await getData2(url3 + parseInt(member));
-      rank = dateInfo.rank;
-      console.log(rank);
-      joined = dateInfo.joined;
-      console.log(joined);
+      if (dateInfo) {
+        rank = dateInfo.rank;
+        console.log(rank);
+        joined = dateInfo.joined;
+        console.log(joined);
+      }
     }
 
     if (!userDetails) {
