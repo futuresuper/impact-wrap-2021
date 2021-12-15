@@ -21,7 +21,7 @@
   };
 
   let name = "Welcome";
-  let option = options.RPG;
+  let invOption = options.RPG;
   let rank = false;
   let joined = false;
   let loading = true;
@@ -30,7 +30,7 @@
   let member;
 
   if (clientSide) {
-    console.log("20");
+    console.log("23");
     getUserDetails();
   }
 
@@ -44,7 +44,7 @@
       if (userDetails) {
         name = userDetails.contact.first_name;
         console.log(name);
-        option =
+        invOption =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
@@ -90,7 +90,7 @@
 </script>
 
 <div class="container">
-  <Sections {name} {option} {joined} {rank} {options} />
+  <Sections {name} {invOption} {joined} {rank} {options} />
 </div>
 
 <style>
