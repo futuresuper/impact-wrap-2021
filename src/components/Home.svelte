@@ -8,12 +8,15 @@
 
   const url1 = "https://api.futuresuper.com.au/api/auth-user";
   const url2 = "https://api.futuresuper.com.au/api/members/";
+  const url3 = "https://api.futuresuper.com.au/api/members/";
 
   let loading = true;
   let loggedIn = false;
-  let userId = false;
-  let userDetails = false;
-  let investmentOption = false;
+  let member;
+  let name;
+  let option;
+  let rank;
+  let joined;
 
   if (clientSide) {
     getUserDetails();
@@ -21,10 +24,15 @@
 
   async function getUserDetails() {
     let response = await getData(url1);
-    userId = response.user_id;
+    member = response.user_id;
 
-    if (userId) {
-      userDetails = await getData(url2 + userId);
+    if (member) {
+      userDetails = await getData(url2 + member);
+      name = userDetails.contact.first_name;
+      option = invIdToOption[userDetails.accounts[0].investment_option_id];
+      dateInfo = await getData(url3 + member);
+      rank = 123; // dateInfo.rank;
+      joined = "March 2016"; // dateInfo.joined;
     }
 
     if (!userDetails) {
@@ -62,10 +70,10 @@
   }
 
   let user = {
-    name: userDetails.contact.first_name ? userDetails.contact.first_name : "",
-    option: investmentOption,
-    rank: 7126,
-    joined: "March 2017",
+    name,
+    option,
+    rank,
+    joined,
   };
 
   $: console.log(user);
