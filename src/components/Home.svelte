@@ -30,7 +30,7 @@
   let member;
 
   if (clientSide) {
-    console.log("23");
+    console.log("24");
     getUserDetails();
   }
 
@@ -48,7 +48,7 @@
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
-        console.log(option);
+        console.log(invOption);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
@@ -82,10 +82,6 @@
   async function getData2(url = "") {
     const response = await fetch(url);
     return response.json();
-  }
-
-  $: if (userDetails) {
-    option = invIdToOption[userDetails.accounts[0].investment_option_id];
   }
 </script>
 
