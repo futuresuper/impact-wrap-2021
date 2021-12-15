@@ -40,7 +40,7 @@
       },
       credentials: "include",
     });
-    console.log(response);
+    return response;
   }
 
   const options = {
