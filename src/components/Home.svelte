@@ -67,6 +67,8 @@
     rank: 7126,
     joined: "March 2017",
   };
+
+  $: console.log(user);
 </script>
 
 <div class="container">
