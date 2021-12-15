@@ -32,7 +32,7 @@
       userDetails = await getData(url2 + member);
       name = userDetails.contact.first_name;
       option = invIdToOption[userDetails.accounts[0].investment_option_id];
-      dateInfo = await getData(url3 + parseInt(member));
+      dateInfo = await getData2(url3 + parseInt(member));
       rank = dateInfo.rank;
       joined = dateInfo.joined;
     }
@@ -51,6 +51,18 @@
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "https://api.futuresuper.com.au",
         cid: cid,
+      },
+      credentials: "include",
+    });
+    return response.json();
+  }
+
+  async function getData2(url = "") {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       credentials: "include",
     });
