@@ -21,6 +21,7 @@
   let joined;
 
   if (clientSide) {
+    console.log("14");
     getUserDetails();
   }
 
@@ -79,8 +80,7 @@
   };
 
   $: if (userDetails) {
-    investmentOption =
-      invIdToOption[userDetails.accounts[0].investment_option_id];
+    option = invIdToOption[userDetails.accounts[0].investment_option_id];
   }
 
   let user = {
