@@ -31,7 +31,7 @@
     ["Members", standardTime],
     ["FUM", 5500],
     ["Rating", 0],
-    ["More", 0],
+    // ["More", 0],
   ];
 
   export let name;

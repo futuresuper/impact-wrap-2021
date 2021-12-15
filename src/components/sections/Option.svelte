@@ -3,12 +3,12 @@
   export let options;
   let percent = false;
 
-  if (option === options.RPG) {
+  $: if (option === options.RPG) {
     percent = 54;
   } else if (option === options.BI) {
     percent = 32;
   }
-  console.log(option);
+  $: console.log(option);
 </script>
 
 <p class="m">

@@ -3,7 +3,7 @@
   export let options;
   let number = 552; // RPG
 
-  if (option === options.BI) {
+  $: if (option === options.BI) {
     number = 450;
   } else if (option === options.PENSION) {
     number = 427;
