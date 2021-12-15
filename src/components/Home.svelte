@@ -34,7 +34,7 @@
   let member;
 
   if (clientSide) {
-    console.log("25");
+    // console.log("25");
     getUserDetails();
   }
 
@@ -47,7 +47,7 @@
       // console.log(userDetails);
       if (userDetails) {
         name = userDetails.contact.first_name;
-        // console.log(name);
+        console.log(name);
         option =
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
@@ -56,12 +56,12 @@
           loggedIn = true;
           loading = false;
         }
-        // console.log(option);
+        console.log(option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
       if (dateInfo) {
         rank = dateInfo.rank;
-        console.log(rank);
+        // console.log(rank);
         joined = dateInfo.joined;
         // console.log(joined);
       }
@@ -91,6 +91,8 @@
     const response = await fetch(url);
     return response.json();
   }
+
+  $: console.log("logged in: " + loggedIn);
 </script>
 
 <div class="container">
