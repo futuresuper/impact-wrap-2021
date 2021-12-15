@@ -12,6 +12,7 @@
 
   let loading = true;
   let loggedIn = false;
+  let userDetails;
   let member;
   let name;
   let option;
