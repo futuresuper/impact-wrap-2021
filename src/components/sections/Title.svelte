@@ -3,23 +3,23 @@
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
   export let name;
-  export let option;
+  // export let option;
   export let getStarted;
   // let loggedIn;
   export let loading;
   let music = true;
 
-  $: console.log(name);
-  $: console.log(option);
-  // $: console.log("logged in: " + loggedIn);
+  // $: console.log(name);
+  // $: console.log(option);
+  // // $: console.log("logged in: " + loggedIn);
 
-  $: if (name) {
-    console.log("NAME: " + name);
-  }
+  // $: if (name) {
+  //   console.log("NAME: " + name);
+  // }
 
-  $: if (option) {
-    console.log("OPTION: " + option);
-  }
+  // $: if (option) {
+  //   console.log("OPTION: " + option);
+  // }
 </script>
 
 <CircleAroundText heading={name.toUpperCase()} textColour="#00F724">
@@ -30,7 +30,7 @@
   {#if loading}
     <p class="m">Loading...</p>
   {:else}
-    {#if name}
+    {#if name !== "Welcome"}
       <p class="s">Let's look at what your money did this year</p>
     {:else}
       <p class="xs">
@@ -44,7 +44,7 @@
     {/if}
 
     <button on:click={() => getStarted(music)}
-      >{name ? "Let's Go →" : "View Impact Recap Example Version"}
+      >{name !== "Welcome" ? "Let's Go →" : "View Impact Recap Example Version"}
     </button>
 
     <div class="music" on:click={() => (music = !music)}>

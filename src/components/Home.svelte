@@ -53,16 +53,16 @@
             userDetails.accounts[0].investments[0].investment_option_id
           ];
 
-        console.log(
-          "Option ID: " +
-            userDetails.accounts[0].investments[0].investment_option_id
-        );
-        console.log(
-          "Option from ID: " +
-            invIdToOption[
-              userDetails.accounts[0].investments[0].investment_option_id
-            ]
-        );
+        // console.log(
+        //   "Option ID: " +
+        //     userDetails.accounts[0].investments[0].investment_option_id
+        // );
+        // console.log(
+        //   "Option from ID: " +
+        //     invIdToOption[
+        //       userDetails.accounts[0].investments[0].investment_option_id
+        //     ]
+        // );
         if (name && option) {
           // loggedIn = true;
           loading = false;
