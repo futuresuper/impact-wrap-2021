@@ -39,8 +39,12 @@
   }
 
   async function getUserDetails() {
-    let response = await getData(url1);
-    member = response.user_id;
+    try {
+      let response = await getData(url1);
+      member = response.user_id;
+    } catch (error) {
+      loading = false;
+    }
 
     if (member) {
       userDetails = await getData(url2 + member);
