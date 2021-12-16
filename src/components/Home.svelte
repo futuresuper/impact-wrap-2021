@@ -74,8 +74,8 @@
         // console.log(joined);
       }
     }
-    loading = false;
   }
+  loading = false;
 
   async function getData(url = "") {
     const response = await fetch(url, {
@@ -96,7 +96,9 @@
     return response.json();
   }
 
-  $: if (name !== "Welcome" && option) {
+  $: if (loading) {
+    console.log("LOADING");
+  } else if (name !== "Welcome" && option) {
     loggedIn = true;
     console.log("LOGGED IN");
     console.log("Name: " + name);
