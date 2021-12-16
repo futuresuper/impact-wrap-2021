@@ -3,25 +3,10 @@
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
   export let name;
-  export let option;
-  export let options;
   export let getStarted;
   export let balancedIndex;
-  // let loggedIn;
   export let loading;
   let music = true;
-
-  // $: console.log(name);
-  // $: console.log(option);
-  // // $: console.log("logged in: " + loggedIn);
-
-  // $: if (name) {
-  //   console.log("NAME: " + name);
-  // }
-
-  // $: if (option) {
-  //   console.log("OPTION: " + option);
-  // }
 </script>
 
 <CircleAroundText heading={name.toUpperCase()} textColour="#00F724">
@@ -47,7 +32,7 @@
         <span class="bold"
           >Looks like you're not logged in to your Account.&nbsp;
         </span><a href="https://my.futuresuper.com.au/"
-          >Login first to get personalised Impact Recap</a
+          >Login first to get your personalised Impact Recap</a
         > or click below to view an example version with information for the 'Renewables
         Plus Growth' option
       </p>

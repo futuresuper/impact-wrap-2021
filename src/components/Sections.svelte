@@ -45,7 +45,7 @@
   let paused = false;
   let musicMuted = true;
   let mainMusicPaused = true;
-  let musicVolume = 0.4;
+  let musicVolume = 0.2;
   let thinkingMusicPaused = true;
   let last = false;
 
