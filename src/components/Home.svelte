@@ -74,8 +74,8 @@
         // console.log(joined);
       }
     }
+    loading = false;
   }
-  loading = false;
 
   async function getData(url = "") {
     const response = await fetch(url, {
