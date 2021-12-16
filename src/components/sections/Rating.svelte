@@ -4,6 +4,9 @@
 
   function handleSubmit(rating) {
     submitted = true;
+    analytics.track("User GaveRating", {
+      rating: rating,
+    });
   }
 </script>
 
