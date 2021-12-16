@@ -44,7 +44,7 @@
     {:else}
       <p class="xs">
         <span class="bold"
-          >Looks like you're not logged in to your Account right now...
+          >Looks like you're not logged in to your Account.&nbsp;
         </span><a href="https://my.futuresuper.com.au/"
           >Login first to get personalised Impact Recap</a
         > or click below to view an example version with information for the 'Renewables
