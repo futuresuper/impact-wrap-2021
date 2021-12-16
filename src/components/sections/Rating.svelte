@@ -1,14 +1,24 @@
 <script>
-  export let nextScreen;
+  // export let nextScreen;
+  let submitted = false;
+
+  function handleSubmit(rating) {
+    submitted = true;
+  }
 </script>
 
-<p>That’s how your super powered change this financial year</p>
+{#if submitted}
+  <p class="xl">Thank you! 🙌</p>
+{:else}
+  <p>That’s how your super powered change this financial year</p>
 
-<!-- <p class="s">Did you like hearing about what your money did?</p>
+  <p class="s">Did you like hearing about what your money did?</p>
 
-<button on:click={nextScreen}>😍</button>
-<button on:click={nextScreen}>😐</button>
-<button on:click={nextScreen}>🙁</button> -->
+  <button on:click={() => handleSubmit(3)}>😍</button>
+  <button on:click={() => handleSubmit(2)}>😐</button>
+  <button on:click={() => handleSubmit(1)}>🙁</button>
+{/if}
+
 <style lang="scss">
   @use "../../styles/" as *;
 
