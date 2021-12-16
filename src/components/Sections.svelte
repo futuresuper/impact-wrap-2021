@@ -51,6 +51,9 @@
 
   function setScreen(i) {
     showing = i;
+    analytics.track("User ViewedImpactWrapScreen", {
+      screen: screens[showing][0],
+    });
   }
 
   function nextScreen() {
