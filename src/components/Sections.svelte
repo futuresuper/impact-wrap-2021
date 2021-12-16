@@ -39,6 +39,7 @@
   export let joined;
   export let rank;
   export let options;
+  export let loading;
   let showing = 0;
   let paused = false;
   let musicMuted = true;
@@ -100,7 +101,7 @@
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title {getStarted} {name} />
+      <Title {getStarted} {name} {loading} />
     {:else if "Option" === screens[showing][0]}
       <Option {option} {options} />
     {:else if "Save" === screens[showing][0]}
