@@ -18,9 +18,9 @@
     INDEXED: "Balanced Indexed",
   };
   const invIdToOption = {
-    "10": options.RPG,
+    "11": options.RPG,
     "15": options.PENSION,
-    "11": options.BI,
+    "10": options.BI,
     // "12": options.INDEXED,
   };
 
