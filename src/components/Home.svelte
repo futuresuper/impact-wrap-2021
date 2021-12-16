@@ -29,7 +29,7 @@
   let rank = false;
   let joined = false;
   let loading = true;
-  // let loggedIn = false;
+  let loggedIn = false;
   let userDetails;
   let member;
 
@@ -63,10 +63,7 @@
         //       userDetails.accounts[0].investments[0].investment_option_id
         //     ]
         // );
-        if (name && option) {
-          // loggedIn = true;
-          loading = false;
-        }
+
         // console.log(option);
       }
       let dateInfo = await getData2(url3 + parseInt(member));
@@ -77,11 +74,7 @@
         // console.log(joined);
       }
     }
-
-    if (!userDetails) {
-      // loggedIn = false;
-      loading = false;
-    }
+    loading = false;
   }
 
   async function getData(url = "") {
@@ -101,6 +94,22 @@
   async function getData2(url = "") {
     const response = await fetch(url);
     return response.json();
+  }
+
+  $: if (name !== "Welcome" && option) {
+    loggedIn = true;
+    console.log("LOGGED IN");
+    console.log("Name: " + name);
+    console.log("Option: " + option);
+    console.log("Joined: " + joined);
+    console.log("Rank: " + rank);
+  } else {
+    loggedIn = false;
+    console.log("NOT LOGGED IN");
+    console.log("Name: " + name);
+    console.log("Option: " + option);
+    console.log("Joined: " + joined);
+    console.log("Rank: " + rank);
   }
 
   // $: console.log("logged in: " + loggedIn);
