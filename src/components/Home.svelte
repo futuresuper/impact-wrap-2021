@@ -18,10 +18,10 @@
     INDEXED: "Balanced Indexed",
   };
   const invIdToOption = {
-    "11": options.RPG,
+    "12": options.RPG,
     "15": options.PENSION,
     "10": options.BI,
-    "12": options.INDEXED,
+    "11": options.INDEXED,
   };
 
   let name = "Welcome";
@@ -32,6 +32,7 @@
   let loggedIn = false;
   let userDetails;
   let member;
+  let balancedIndex = false;
 
   if (clientSide) {
     // console.log("25");
@@ -56,6 +57,11 @@
           invIdToOption[
             userDetails.accounts[0].investments[0].investment_option_id
           ];
+
+        if (option === options.INDEXED) {
+          balancedIndex = true;
+          option = options.RPG;
+        }
 
         // console.log(
         //   "Option ID: " +
@@ -109,6 +115,10 @@
     console.log("Option: " + option);
     console.log("Joined: " + joined);
     console.log("Rank: " + rank);
+    analytics.track("User ViewedImpactWrap", {
+      loggedIn: true,
+      investmentOption: option,
+    });
   } else {
     loggedIn = false;
     console.log("NOT LOGGED IN");
@@ -116,13 +126,24 @@
     console.log("Option: " + option);
     console.log("Joined: " + joined);
     console.log("Rank: " + rank);
+    analytics.track("User ViewedImpactWrap", {
+      loggedIn: false,
+    });
   }
 
   // $: console.log("logged in: " + loggedIn);
 </script>
 
 <div class="container">
-  <Sections {name} {option} {joined} {rank} {options} {loading} />
+  <Sections
+    {name}
+    {option}
+    {joined}
+    {rank}
+    {options}
+    {loading}
+    {balancedIndex}
+  />
 </div>
 
 <style>

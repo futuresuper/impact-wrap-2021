@@ -40,6 +40,7 @@
   export let rank;
   export let options;
   export let loading;
+  export let balancedIndex;
   let showing = 0;
   let paused = false;
   let musicMuted = true;
@@ -54,6 +55,9 @@
 
   function nextScreen() {
     showing = showing === screens.length - 1 ? screens.length - 1 : showing + 1;
+    analytics.track("User ViewedImpactWrapScreen", {
+      screen: screens[showing][0],
+    });
   }
 
   function goBack() {
@@ -101,7 +105,7 @@
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title {getStarted} {name} {loading} {options} {option} />
+      <Title {getStarted} {name} {loading} {options} {option} {balancedIndex} />
     {:else if "Option" === screens[showing][0]}
       <Option {option} {options} />
     {:else if "Save" === screens[showing][0]}

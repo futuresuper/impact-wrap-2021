@@ -6,6 +6,7 @@
   export let option;
   export let options;
   export let getStarted;
+  export let balancedIndex;
   // let loggedIn;
   export let loading;
   let music = true;
@@ -31,9 +32,9 @@
   {#if loading}
     <p class="m">Loading...</p>
   {:else}
-    {#if name !== "Welcome" && option !== options.INDEXED}
+    {#if name !== "Welcome" && !balancedIndex}
       <p class="s">Let's look at what your money did this year</p>
-    {:else if option === options.INDEXED}
+    {:else if balancedIndex}
       <p class="xs">
         <span class="bold"
           >Looks like you're in the Balanced Indexed option which does not have
