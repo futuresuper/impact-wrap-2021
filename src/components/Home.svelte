@@ -110,22 +110,22 @@
     console.log("LOADING");
   } else if (name !== "Welcome" && option) {
     loggedIn = true;
-    console.log("LOGGED IN");
-    console.log("Name: " + name);
-    console.log("Option: " + option);
-    console.log("Joined: " + joined);
-    console.log("Rank: " + rank);
+    // console.log("LOGGED IN");
+    // console.log("Name: " + name);
+    // console.log("Option: " + option);
+    // console.log("Joined: " + joined);
+    // console.log("Rank: " + rank);
     analytics.track("User ViewedImpactWrap", {
       loggedIn: true,
       investmentOption: option,
     });
   } else {
     loggedIn = false;
-    console.log("NOT LOGGED IN");
-    console.log("Name: " + name);
-    console.log("Option: " + option);
-    console.log("Joined: " + joined);
-    console.log("Rank: " + rank);
+    // console.log("NOT LOGGED IN");
+    // console.log("Name: " + name);
+    // console.log("Option: " + option);
+    // console.log("Joined: " + joined);
+    // console.log("Rank: " + rank);
     analytics.track("User ViewedImpactWrap", {
       loggedIn: false,
     });
