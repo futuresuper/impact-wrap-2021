@@ -101,7 +101,7 @@
   </header>
   <section>
     {#if "Title" === screens[showing][0]}
-      <Title {getStarted} {name} {loading} />
+      <Title {getStarted} {name} {loading} {options} {option} />
     {:else if "Option" === screens[showing][0]}
       <Option {option} {options} />
     {:else if "Save" === screens[showing][0]}

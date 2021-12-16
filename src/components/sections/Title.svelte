@@ -3,7 +3,8 @@
   import ImpactWrapCircle from "../images/ImpactWrapCircle.svelte";
 
   export let name;
-  // export let option;
+  export let option;
+  export let options;
   export let getStarted;
   // let loggedIn;
   export let loading;
@@ -30,8 +31,16 @@
   {#if loading}
     <p class="m">Loading...</p>
   {:else}
-    {#if name !== "Welcome"}
+    {#if name !== "Welcome" && option !== options.INDEXED}
       <p class="s">Let's look at what your money did this year</p>
+    {:else if option === options.INDEXED}
+      <p class="xs">
+        <span class="bold"
+          >Looks like you're in the Balanced Indexed option which does not have
+          Impact Recap available...
+        </span>Click below to view an example version with information for the
+        'Renewables Plus Growth' option
+      </p>
     {:else}
       <p class="xs">
         <span class="bold"
