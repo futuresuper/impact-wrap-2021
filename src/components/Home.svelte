@@ -1,5 +1,6 @@
 <script>
   import Sections from "./Sections.svelte";
+  import Footer from "../components/sections/Footer.svelte";
 
   const clientSide = !import.meta.env.SSR;
 
@@ -144,6 +145,7 @@
     {loading}
     {balancedIndex}
   />
+  <Footer />
 </div>
 
 <style>
